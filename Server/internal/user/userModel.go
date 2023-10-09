@@ -3,10 +3,14 @@ package user
 import "context"
 
 type User struct {
-	ID       int64  `json:"id"`
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	ID           int64  `json:"id"`
+	Username     string `json:"username"`
+	Email        string `json:"email"`
+	Password     string `json:"password"`
+	Banned       bool   `json:"banned"`
+	Verification bool   `json:"verification"`
+	DateOfBirth  string `json:"date_of_birth"`
+	Description  string `json:"description"`
 }
 
 type CreateUserReq struct {

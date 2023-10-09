@@ -1,7 +1,43 @@
+'use client';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import axios from 'axios';
 import Link from 'next/link';
-import React from 'react';
+import { API_URL } from '@/lib/constants';
+import { Toaster, toast } from 'sonner';
 
-export default function RegisterPage() {
+const schema = z
+	.object({
+		username: z.string().min(3),
+		password: z.string().min(6),
+		confirmPassword: z.string().min(6),
+		email: z.string(),
+	})
+	.refine((data) => data.password === data.confirmPassword, {
+		message: 'Пароли не совпадают',
+		path: ['confirmPassword'],
+	});
+
+type FormValues = z.infer<typeof schema>;
+
+export default function RegistrationPage() {
+	const { register, handleSubmit } = useForm<FormValues>({
+		resolver: zodResolver(schema),
+	});
+
+	const onSubmit = async (data: FormValues) => {
+		const { confirmPassword, ...NewData } = data;
+
+		try {
+			await axios.post(`${API_URL}/registration`, NewData);
+			toast.success(`${NewData.username}, вы успешно зарегистрировались!`);
+		} catch (error) {
+			console.error(error);
+			toast.error(`Чтото пошло не так! Ошибка: ${error}`);
+		}
+	};
+
 	return (
 		<>
 			<div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
@@ -12,18 +48,19 @@ export default function RegisterPage() {
 				</div>
 
 				<div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-					<form className='space-y-6' action='#' method='POST'>
+					<form className='space-y-6' onSubmit={handleSubmit(onSubmit)}>
 						<div>
 							<label
-								htmlFor='email'
+								htmlFor='username'
 								className='block text-sm font-medium leading-6 text-gray-900'>
 								username
 							</label>
 							<div className='mt-2'>
 								<input
+									{...register('username')}
 									id='username'
 									name='username'
-									type='username'
+									type='name'
 									autoComplete='username'
 									required
 									className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
@@ -38,6 +75,7 @@ export default function RegisterPage() {
 							</label>
 							<div className='mt-2'>
 								<input
+									{...register('email')}
 									id='email'
 									name='email'
 									type='email'
@@ -54,16 +92,10 @@ export default function RegisterPage() {
 									className='block text-sm font-medium leading-6 text-gray-900'>
 									Password
 								</label>
-								<div className='text-sm'>
-									<a
-										href='#'
-										className='font-semibold text-indigo-600 hover:text-indigo-500'>
-										Forgot password?
-									</a>
-								</div>
 							</div>
 							<div className='mt-2'>
 								<input
+									{...register('password')}
 									id='password'
 									name='password'
 									type='password'
@@ -73,26 +105,19 @@ export default function RegisterPage() {
 								/>
 							</div>
 						</div>
-
 						<div>
 							<div className='flex items-center justify-between'>
 								<label
-									htmlFor='password'
+									htmlFor='confirmPassword'
 									className='block text-sm font-medium leading-6 text-gray-900'>
-									Password
+									confirmPassword
 								</label>
-								<div className='text-sm'>
-									<a
-										href='#'
-										className='font-semibold text-indigo-600 hover:text-indigo-500'>
-										Forgot password?
-									</a>
-								</div>
 							</div>
 							<div className='mt-2'>
 								<input
-									id='password'
-									name='password'
+									{...register('confirmPassword')}
+									id='confirmPassword'
+									name='confirmPassword'
 									type='password'
 									autoComplete='current-password'
 									required
@@ -110,6 +135,7 @@ export default function RegisterPage() {
 						</div>
 					</form>
 					<Link href={'/login'}>login</Link>
+					<Toaster richColors />
 				</div>
 			</div>
 		</>
