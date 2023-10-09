@@ -33,7 +33,6 @@ export default function RegistrationPage() {
 			await axios.post(`${API_URL}/registration`, NewData);
 			toast.success(`${NewData.username}, вы успешно зарегистрировались!`);
 		} catch (error) {
-			console.error(error);
 			toast.error(`Чтото пошло не так! Ошибка: ${error}`);
 		}
 	};
