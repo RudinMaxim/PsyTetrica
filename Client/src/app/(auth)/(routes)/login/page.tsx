@@ -1,10 +1,33 @@
 'use client';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import Link from 'next/link';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { signIn, useSession } from 'next-auth/react';
+import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
+import { toast } from 'sonner';
+
+const schema = z.object({
+	password: z.string().min(6),
+	email: z.string(),
+});
+
+type FormValues = z.infer<typeof schema>;
 
 export default function LoginhPage() {
+	const { register, handleSubmit } = useForm<FormValues>({
+		resolver: zodResolver(schema),
+	});
+	const onSubmit = async (data: FormValues) => {
+		const { email, password } = data;
+		const result = await signIn('credentials', {
+			email: email,
+			password: password,
+			redirect: true,
+			callbackUrl: '/',
+		});
+	};
+
 	return (
 		<>
 			<div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
@@ -15,7 +38,7 @@ export default function LoginhPage() {
 				</div>
 
 				<div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-					<form className='space-y-6' action='#' method='POST'>
+					<form className='space-y-6' onSubmit={handleSubmit(onSubmit)}>
 						<div>
 							<label
 								htmlFor='email'
@@ -24,6 +47,7 @@ export default function LoginhPage() {
 							</label>
 							<div className='mt-2'>
 								<input
+									{...register('email')}
 									id='email'
 									name='email'
 									type='email'
@@ -51,6 +75,7 @@ export default function LoginhPage() {
 							</div>
 							<div className='mt-2'>
 								<input
+									{...register('password')}
 									id='password'
 									name='password'
 									type='password'

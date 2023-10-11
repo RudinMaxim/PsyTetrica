@@ -15,7 +15,7 @@ type service struct {
 }
 
 const (
-	secretKey = "secret"
+	secretKey = "652adc550ce5535f76f85b52d87f87ab"
 )
 
 func NewService(repository Repository) Service {

@@ -1,12 +1,19 @@
 import type { NextAuthOptions, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import axios from 'axios';
+import { API_URL } from '../src/lib/constants';
 export const authOptions: NextAuthOptions = {
 	session: {
 		strategy: 'jwt',
 	},
+	secret: process.env.NEXTAUTH_SECRET,
+	pages: {
+		signIn: '/login',
+	},
 	providers: [
 		CredentialsProvider({
-			name: 'Credentials',
+			id: 'credentials',
+			name: 'psytetrica',
 			credentials: {
 				email: {
 					label: 'email',
@@ -27,17 +34,10 @@ export const authOptions: NextAuthOptions = {
 					password: credentials?.password,
 				};
 
-				const res = await fetch(`http://localhost:8080/login`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(payload),
-				});
+				const res = await axios.post(`${API_URL}/login`, payload);
+				const user = await res.data;
 
-				const user = await res.json();
-
-				if (res.ok && user) {
+				if (res.status === 200 && user) {
 					const { password, ...userInfo } = user;
 					return userInfo as User;
 				}
@@ -47,18 +47,12 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	callbacks: {
-		async jwt({ token, account, profile }) {
-			if (account) {
-				token.accessToken = account.access_token;
-				token.email = profile?.email;
-			}
-			return token;
+		async jwt({ token, user }) {
+			return { ...token, ...user };
 		},
 		async session({ session, token, user }) {
+			session.user = token as any;
 			return session;
 		},
-	},
-	pages: {
-		signIn: '/login',
 	},
 };

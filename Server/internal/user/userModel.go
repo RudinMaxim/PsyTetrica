@@ -31,9 +31,9 @@ type LoginUserReq struct {
 }
 
 type LoginUserRes struct {
-	accessToken string
 	ID          string `json:"id"`
 	Username    string `json:"username"`
+	accessToken string
 }
 
 type UpdateUserReq struct {
