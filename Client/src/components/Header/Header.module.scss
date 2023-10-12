@@ -1,0 +1,28 @@
+.Header {
+	padding: 1rem 0;
+	.HeaderInner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.NavBar {
+	margin-left: 1rem;
+	ul {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nonActiveStyle {
+	}
+	.activeStyle {
+		a {
+			color: var(--secondary-color);
+		}
+	}
+}
+.authButtonList {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}

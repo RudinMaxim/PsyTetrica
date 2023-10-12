@@ -2,6 +2,7 @@ import Provider from '@/context/Provider';
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Footer, Header } from '@/components/exportComponents';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,9 +17,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className='h-full bg-white'>
-			<body className={`${inter.className} h-full`}>
-				<Provider>{children}</Provider>
+		<html lang='en'>
+			<body className={`${inter.className}`}>
+				<Provider>
+					<Header />
+					{children}
+					<Footer />
+				</Provider>
 			</body>
 		</html>
 	);

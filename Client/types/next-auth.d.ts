@@ -1,5 +1,3 @@
-// Ref: https://next-auth.js.org/getting-started/typescript#module-augmentation
-
 import { DefaultSession, DefaultUser } from 'next-auth';
 import { JWT, DefaultJWT } from 'next-auth/jwt';
 
@@ -12,6 +10,7 @@ declare module 'next-auth' {
 			date_of_birth: string;
 			role: string;
 			date_of_birth: string;
+			image: string;
 			accessToken: string;
 		};
 	}
