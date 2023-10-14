@@ -45,6 +45,11 @@ func (s *service) CreateUser(c context.Context, req *CreateUserReq) (*CreateUser
 		return nil, err
 	}
 
+	err = s.Repository.AddUserRole(ctx, r.ID, req.RoleID)
+	if err != nil {
+		return nil, err
+	}
+
 	res := &CreateUserRes{
 		ID:       strconv.Itoa(int(r.ID)),
 		Username: r.Username,

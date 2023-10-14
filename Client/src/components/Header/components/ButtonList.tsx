@@ -23,12 +23,7 @@ export default function ButtonList(): React.JSX.Element {
 					)}
 					<Link href={'/chat'}>Чаты</Link>
 				</>
-			) : (
-				<>
-					<button onClick={() => signIn()}>Войти</button>
-					<Link href={'/registration'}>Зарегистрироваться</Link>
-				</>
-			)}
+			) : <button onClick={() => signIn()}>Войти</button>}
 		</div>
 	);
 }

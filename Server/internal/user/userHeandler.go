@@ -50,11 +50,6 @@ func (h *Handler) Login(c *gin.Context) {
 	c.JSON(http.StatusOK, u)
 }
 
-func (h *Handler) Logout(c *gin.Context) {
-	c.SetCookie("jwt", "", -1, "", "", false, true)
-	c.JSON(http.StatusOK, gin.H{"message": "logout successful"})
-}
-
 func (h *Handler) UpdateUser(c *gin.Context) {
 
 	var req UpdateUserReq

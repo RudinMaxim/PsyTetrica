@@ -17,12 +17,18 @@ type CreateUserReq struct {
 	Username string `json:"username"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
+	RoleID   int64  `json:"role_id"`
 }
 
 type CreateUserRes struct {
 	ID       string `json:"id"`
 	Username string `json:"username"`
 	Email    string `json:"email"`
+}
+
+type UserRole struct {
+	UserID int64 `json:"user_id"`
+	RoleID int64 `json:"role_id"`
 }
 
 type LoginUserReq struct {
@@ -63,6 +69,7 @@ type GetUserByIDRes struct {
 
 type Repository interface {
 	CreateUser(ctx context.Context, user *User) (*User, error)
+	AddUserRole(ctx context.Context, UserID int64, RoleID int64) error
 	UpdateUser(ctx context.Context, user *User) (*User, error)
 	DeleteUser(ctx context.Context, id int64) error
 

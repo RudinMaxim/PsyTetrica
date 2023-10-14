@@ -9,8 +9,8 @@ declare module 'next-auth' {
 			email: string;
 			date_of_birth: string;
 			role: string;
-			date_of_birth: string;
 			image: string;
+			description: string;
 			accessToken: string;
 		};
 	}

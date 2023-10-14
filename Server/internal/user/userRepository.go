@@ -31,12 +31,14 @@ func (r *repository) CreateUser(ctx context.Context, user *User) (*User, error) 
 	user.ID = int64(lastInsertId)
 	return user, nil
 }
-
+func (r *repository) AddUserRole(ctx context.Context, UserID int64, RoleID int64) error {
+	query := "INSERT INTO user_role(user_id, role_id) VALUES ($1, $2)"
+	err := r.db.QueryRowContext(ctx, query, UserID, RoleID)
+	return err.Err()
+}
 func (r *repository) UpdateUser(ctx context.Context, user *User) (*User, error) {
-	u := User{}
-
 	query := "UPDATE users SET username = $1, email = $2, password = $3 WHERE id = $4"
-	_, err := r.db.ExecContext(ctx, query, u.Username, u.Email, u.Password, u.ID)
+	_, err := r.db.ExecContext(ctx, query, user.Username, user.Email, user.Password, user.ID)
 	if err != nil {
 		return &User{}, err
 	}

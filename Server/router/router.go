@@ -15,7 +15,6 @@ func InitRouter(userHandler *user.Handler, wsHandler *chat.Handler) {
 
 	r.POST("/registration", userHandler.CreateUser)
 	r.POST("/login", userHandler.Login)
-	r.GET("/logout", userHandler.Logout)
 	r.PUT("/user/update", userHandler.UpdateUser)
 	r.DELETE("/user/delete/:id", userHandler.DeleteUser)
 	r.GET("/users", userHandler.GetAllUsers)
