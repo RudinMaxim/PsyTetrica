@@ -73,26 +73,31 @@ func (s *service) CreatePsychologistProfile(c context.Context, req *CreatePsycho
 		return nil, err
 	}
 
-	err = s.Repository.AddPsychologistSpecialization(ctx, r.ID, req.SpecializationID)
-	if err != nil {
-		return nil, err
+	for _, specID := range req.SpecializationID {
+		err := s.Repository.AddPsychologistSpecialization(ctx, r.ID, specID)
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	err = s.Repository.AddPsychologistApproaches(ctx, r.ID, req.ApproachID)
-	if err != nil {
-		return nil, err
+	for _, approachID := range req.ApproachID {
+		err := s.Repository.AddPsychologistApproaches(ctx, r.ID, approachID)
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	err = s.Repository.AddPsychologistTherapyType(ctx, r.ID, req.TherapyTypeID, req.TherapyTypePrices)
-	if err != nil {
-		return nil, err
+	// Эта штука не работает
+	for i, therepyType := range req.TherapyTypeID {
+		prise := req.TherapyTypePrices[i]
+		err := s.Repository.AddPsychologistTherapyType(ctx, r.ID, therepyType, prise)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	res := &CreatePsychologistProfileRes{
-		ID:         r.ID,
-		Bio:        r.Bio,
-		Experience: r.Experience,
-		Education:  r.Education,
+		ID: r.ID,
 	}
 	return res, nil
 

@@ -49,21 +49,18 @@ type PsychologistProfile struct {
 
 // Create PsychologistProfile
 type CreatePsychologistProfileReq struct {
-	UserID            int64  `json:"user_id"`
-	Bio               string `json:"bio"`
-	Education         string `json:"education"`
-	Experience        string `json:"experience"`
-	SpecializationID  int64  `json:"specialization_id"`
-	ApproachID        int64  `json:"approach_id"`
-	TherapyTypeID     int64  `json:"therapy_type_id"`
-	TherapyTypePrices int64  `json:"therapy_type_prices"`
+	UserID            int64   `json:"user_id"`
+	Bio               string  `json:"bio"`
+	Education         string  `json:"education"`
+	Experience        string  `json:"experience"`
+	SpecializationID  []int64 `json:"specialization_id"`
+	ApproachID        []int64 `json:"approach_id"`
+	TherapyTypeID     []int64 `json:"therapy_type_id"`
+	TherapyTypePrices []int64 `json:"therapy_type_prices"`
 }
 
 type CreatePsychologistProfileRes struct {
-	ID         int64  `json:"id"`
-	Bio        string `json:"bio"`
-	Education  string `json:"education"`
-	Experience string `json:"experience"`
+	ID int64 `json:"id"`
 }
 
 // Auth

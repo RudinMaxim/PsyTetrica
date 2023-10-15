@@ -7,7 +7,7 @@ create table users (
     created_at timestamp with time zone null default now(),
     updated_at timestamp without time zone null default now(),
     banned boolean null default false,
---     verification boolean null default false,
+    --     verification boolean null default false,
     description text null,
     constraint users_pkey primary key (id),
     constraint users_email_key unique (email)
@@ -36,58 +36,50 @@ create table user_role (
 --     constraint email_verification_username_fkey foreign key (username) references users (username)
 -- }
 CREATE TABLE psychologists (
-                               id SERIAL PRIMARY KEY,
-                               user_id INTEGER,
-                               bio TEXT,
-                               education Text,
-                               experiance INTEGER,
-                               FOREIGN KEY (user_id) REFERENCES users(id)
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    bio TEXT,
+    education Text,
+    experiance INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id) constraint user_id_key unique (user_id)
 );
-
 CREATE TABLE specializations (
-                                 id SERIAL PRIMARY KEY,
-                                 name VARCHAR(255)
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
-
 CREATE TABLE approaches (
-                            id SERIAL PRIMARY KEY,
-                            name VARCHAR(255)
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
-
 CREATE TABLE therapy_types (
-                               id SERIAL PRIMARY KEY,
-                               name VARCHAR(255)
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
-
 CREATE TABLE psychologist_specializations (
-                                              psychologist_id INTEGER,
-                                              specialization_id INTEGER,
-                                              FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
-                                              FOREIGN KEY (specialization_id) REFERENCES specializations(id)
+    psychologist_id INTEGER,
+    specialization_id INTEGER,
+    FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
+    FOREIGN KEY (specialization_id) REFERENCES specializations(id)
 );
-
 CREATE TABLE psychologist_approaches (
-                                         psychologist_id INTEGER,
-                                         approach_id INTEGER,
-                                         FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
-                                         FOREIGN KEY (approach_id) REFERENCES approaches(id)
+    psychologist_id INTEGER,
+    approach_id INTEGER,
+    FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
+    FOREIGN KEY (approach_id) REFERENCES approaches(id)
 );
-
 CREATE TABLE psychologist_prices (
-                                     psychologist_id INTEGER,
-                                     therapy_type_id INTEGER,
-                                     price DECIMAL,
-                                     FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
-                                     FOREIGN KEY (therapy_type_id) REFERENCES therapy_types(id)
+    psychologist_id INTEGER,
+    therapy_type_id INTEGER,
+    price DECIMAL,
+    FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
+    FOREIGN KEY (therapy_type_id) REFERENCES therapy_types(id)
 );
-
 CREATE TABLE psychologist_therapy_types (
-                                            psychologist_id INTEGER,
-                                            therapy_type_id INTEGER,
-                                            FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
-                                            FOREIGN KEY (therapy_type_id) REFERENCES therapy_types(id)
+    psychologist_id INTEGER,
+    therapy_type_id INTEGER,
+    FOREIGN KEY (psychologist_id) REFERENCES psychologists(id),
+    FOREIGN KEY (therapy_type_id) REFERENCES therapy_types(id)
 );
-
 -- categories
 create table categories (
     id serial,

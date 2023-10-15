@@ -67,7 +67,7 @@ func (r *repository) AddPsychologistApproaches(ctx context.Context, Psychologist
 	return nil
 }
 func (r *repository) AddPsychologistTherapyType(ctx context.Context, PsychologistID int64, TherapyTypeID int64, TherapyTypePrices int64) error {
-	query := "INSERT INTO psychologist_approaches(psychologist_id, therapy_type_id, therapy_type_prices) VALUES ($1, $2, $3)"
+	query := "INSERT INTO psychologist_therapy_type (psychologist_id, therapy_type_id, therapy_type_prices) VALUES ($1, $2, $3)"
 	err := r.db.QueryRowContext(ctx, query, PsychologistID, TherapyTypeID, TherapyTypePrices)
 	if err != nil {
 		return nil
