@@ -1,19 +1,9 @@
 'use client';
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import style from '../Header.module.scss';
+import { usePathname } from 'next/navigation';
+import { NavLink } from '@/lib/constants';
 import Link from 'next/link';
-
-const NavLink = [
-	{
-		url: '/',
-		title: 'Главная',
-	},
-	{
-		url: '/posts',
-		title: 'Посты',
-	},
-];
 
 export default function NavBar() {
 	const currentRoute = usePathname();

@@ -1,4 +1,4 @@
 import Button from './Button/Button';
-import Input from './Input/Input';
+import { Input, RadioInput } from './Input/Input';
 
-export { Button, Input };
+export { Button, Input, RadioInput };

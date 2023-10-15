@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Chat() {
 	return (
-		<div>
+		<main>
 			<h1>Тут будут чаты</h1>
-		</div>
+		</main>
 	);
 }

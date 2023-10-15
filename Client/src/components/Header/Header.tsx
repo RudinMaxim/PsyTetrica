@@ -8,11 +8,11 @@ export default function Header() {
 	return (
 		<header className={style.Header}>
 			<div className={style.HeaderInner}>
-				<div className={style.HeaderInner}>
-					<Logo />
+				<Logo />
+				<div className={style.HeaderRightSide}>
 					<NavBar />
+					<ButtonList />
 				</div>
-				<ButtonList />
 			</div>
 		</header>
 	);

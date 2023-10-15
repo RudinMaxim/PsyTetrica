@@ -51,12 +51,51 @@ func (s *service) CreateUser(c context.Context, req *CreateUserReq) (*CreateUser
 	}
 
 	res := &CreateUserRes{
-		ID:       strconv.Itoa(int(r.ID)),
+		ID:       r.ID,
 		Username: r.Username,
 		Email:    r.Email,
 	}
 
 	return res, nil
+}
+
+func (s *service) CreatePsychologistProfile(c context.Context, req *CreatePsychologistProfileReq) (*CreatePsychologistProfileRes, error) {
+	ctx, cancel := context.WithTimeout(c, s.timeout)
+	defer cancel()
+	psy := &PsychologistProfile{
+		UserID:     req.UserID,
+		Bio:        req.Bio,
+		Education:  req.Bio,
+		Experience: req.Experience,
+	}
+	r, err := s.Repository.CreatePsychologistProfile(ctx, psy)
+	if err != nil {
+		return nil, err
+	}
+
+	err = s.Repository.AddPsychologistSpecialization(ctx, r.ID, req.SpecializationID)
+	if err != nil {
+		return nil, err
+	}
+
+	err = s.Repository.AddPsychologistApproaches(ctx, r.ID, req.ApproachID)
+	if err != nil {
+		return nil, err
+	}
+
+	err = s.Repository.AddPsychologistTherapyType(ctx, r.ID, req.TherapyTypeID, req.TherapyTypePrices)
+	if err != nil {
+		return nil, err
+	}
+
+	res := &CreatePsychologistProfileRes{
+		ID:         r.ID,
+		Bio:        r.Bio,
+		Experience: r.Experience,
+		Education:  r.Education,
+	}
+	return res, nil
+
 }
 
 type MyJWTClaims struct {

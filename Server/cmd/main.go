@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	db, err := database.PostgresConnect()
+	db, err := database.InitDB()
 	if err != nil {
 		log.Fatalf("could not initialize database connection: %s", err)
 	}

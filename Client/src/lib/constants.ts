@@ -8,3 +8,22 @@ const PSYCHOLOGIST_ROLE_ID = 2;
 const ADMIN_ROLE_ID = 3;
 const SUPPORT_ROLE_ID = 4;
 export { CLIENT_ROLE_ID, PSYCHOLOGIST_ROLE_ID, ADMIN_ROLE_ID, SUPPORT_ROLE_ID };
+
+export const NavLink = [
+	{
+		url: '/#about',
+		title: 'О нас',
+	},
+	{
+		url: '/Materials',
+		title: 'Материалы',
+	},
+	{
+		url: '/TestPsy',
+		title: 'Тесты',
+	},
+	{
+		url: '/ForPsy',
+		title: 'Для психологов',
+	},
+];

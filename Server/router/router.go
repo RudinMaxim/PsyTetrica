@@ -14,15 +14,16 @@ func InitRouter(userHandler *user.Handler, wsHandler *chat.Handler) {
 	r.Use(CORSMiddleware())
 
 	r.POST("/registration", userHandler.CreateUser)
+	r.POST("/createPsy", userHandler.CreatePsychologistProfile)
 	r.POST("/login", userHandler.Login)
 	r.PUT("/user/update", userHandler.UpdateUser)
 	r.DELETE("/user/delete/:id", userHandler.DeleteUser)
 	r.GET("/users", userHandler.GetAllUsers)
 
-	r.POST("/chat/createRoom", wsHandler.CreateRoom)
-	r.GET("/chat/joinRoom/:roomId", wsHandler.JoinRoom)
-	r.GET("/chat/getRooms", wsHandler.GetRooms)
-	r.GET("/chat/getClients/:roomId", wsHandler.GetClients)
+	//r.POST("/chat/createRoom", wsHandler.CreateRoom)
+	//r.GET("/chat/joinRoom/:roomId", wsHandler.JoinRoom)
+	//r.GET("/chat/getRooms", wsHandler.GetRooms)
+	//r.GET("/chat/getClients/:roomId", wsHandler.GetClients)
 }
 
 func Start(addr string) error {

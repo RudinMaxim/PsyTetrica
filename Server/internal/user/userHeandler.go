@@ -30,7 +30,24 @@ func (h *Handler) CreateUser(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, res)
+	c.JSON(http.StatusCreated, res)
+}
+
+func (h *Handler) CreatePsychologistProfile(c *gin.Context) {
+	var psy CreatePsychologistProfileReq
+
+	if err := c.ShouldBindJSON(&psy); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	res, err := h.Service.CreatePsychologistProfile(c.Request.Context(), &psy)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, res)
 }
 
 func (h *Handler) Login(c *gin.Context) {

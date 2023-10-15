@@ -13,24 +13,24 @@ type Database struct {
 	db *sql.DB
 }
 
-func PostgresConnect() (*Database, error) {
+func InitDB() (*Database, error) {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
 
-	// host := os.Getenv("DB_HOST")
+	//host := os.Getenv("DB_HOST")
 	host := "db.rdtrqemvzkbtzqmkxned.supabase.co"
-	// port := os.Getenv("DB_PORT")
+	//port := os.Getenv("DB_PORT")
 	port := "5432"
-	// user := os.Getenv("DB_USER")
+	//user := os.Getenv("DB_USER")
 	user := "postgres"
-	// password := os.Getenv("DB_PASSWORD")
+	//password := os.Getenv("DB_PASSWORD")
 	password := "xLV71wrMBofxm1Dz"
-	// dbname := os.Getenv("DB_NAME")
+	//dbname := os.Getenv("DB_NAME")
 	dbname := "postgres"
 
-	// формирование строки подключения к базе данных
+	//формирование строки подключения к базе данных
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+"password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
 	// открытие соединения с базой данных

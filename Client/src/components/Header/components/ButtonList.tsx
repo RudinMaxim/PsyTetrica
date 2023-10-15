@@ -12,18 +12,15 @@ export default function ButtonList(): React.JSX.Element {
 	return (
 		<div className={style.authButtonList}>
 			{session?.user ? (
-				<>
-					{session?.user.username && (
-						<button onClick={() => signOut({ callbackUrl: '/' })}>
-							<ProfileButton
-								name={session?.user.username}
-								image={session.user.image}
-							/>
-						</button>
-					)}
-					<Link href={'/chat'}>Чаты</Link>
-				</>
-			) : <button onClick={() => signIn()}>Войти</button>}
+				<button onClick={() => signOut({ callbackUrl: '/' })}>
+					<ProfileButton
+						name={session?.user.username}
+						image={session.user.image}
+					/>
+				</button>
+			) : (
+				<button onClick={() => signIn()}>Войти</button>
+			)}
 		</div>
 	);
 }
