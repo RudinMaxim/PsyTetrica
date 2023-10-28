@@ -1,0 +1,19 @@
+.Button {
+	border-radius: 9px;
+	padding: 0.5rem 1rem;
+	color: var(--bg-color);
+	font-weight: 700;
+	text-transform: capitalize;
+}
+.Primary {
+	background: var(--primary-color);
+}
+.Secondary {
+	background: var(--secondary-color);
+}
+.Tertiary {
+	background: var(--tertiary-color);
+}
+.Fourthly {
+	background: var(--fourthly-color);
+}
