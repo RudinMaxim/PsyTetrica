@@ -22,6 +22,8 @@ func NewRepository(db DBTX) Repository {
 
 func (r *repository) CreateUser(ctx context.Context, user *User) (*User, error) {
 	var lastInsertId int64
+	// todo добовление фото пользователя
+
 	query := "INSERT INTO users(username, password, email) VALUES ($1, $2, $3) returning id"
 	err := r.db.QueryRowContext(ctx, query, user.Username, user.Password, user.Email).Scan(&lastInsertId)
 	if err != nil {
@@ -67,7 +69,7 @@ func (r *repository) AddPsychologistApproaches(ctx context.Context, Psychologist
 	return nil
 }
 func (r *repository) AddPsychologistTherapyType(ctx context.Context, PsychologistID int64, TherapyTypeID int64, TherapyTypePrices int64) error {
-	query := "INSERT INTO psychologist_therapy_type (psychologist_id, therapy_type_id, therapy_type_prices) VALUES ($1, $2, $3)"
+	query := "INSERT INTO psychologist_therapy_types(psychologist_id, therapy_type_id, therapy_type_prices) VALUES ($1, $2, $3)"
 	err := r.db.QueryRowContext(ctx, query, PsychologistID, TherapyTypeID, TherapyTypePrices)
 	if err != nil {
 		return nil

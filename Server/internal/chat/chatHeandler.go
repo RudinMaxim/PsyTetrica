@@ -17,11 +17,6 @@ func NewHandler(h *Hub) *Handler {
 	}
 }
 
-type CreateRoomReq struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
-}
-
 func (h *Handler) CreateRoom(c *gin.Context) {
 	var req CreateRoomReq
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -78,11 +73,6 @@ func (h *Handler) JoinRoom(c *gin.Context) {
 	cl.readMessage(h.hub)
 }
 
-type RoomRes struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
-}
-
 func (h *Handler) GetRooms(c *gin.Context) {
 	rooms := make([]RoomRes, 0)
 
@@ -94,11 +84,6 @@ func (h *Handler) GetRooms(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, rooms)
-}
-
-type ClientRes struct {
-	ID       string `json:"id"`
-	Username string `json:"username"`
 }
 
 func (h *Handler) GetClients(c *gin.Context) {
