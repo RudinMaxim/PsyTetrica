@@ -9,23 +9,24 @@ import { Button, Input } from '@/UI/exportUI';
 const schema = z.object({
 	email: z.string().email('Неверный формат email'),
 });
+type FormValues = z.infer<typeof schema>;
 export default function FormHomePsy() {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
+	} = useForm<FormValues>({
 		resolver: zodResolver(schema),
 	});
 
-	const onSubmit = (email) => {
-		console.log(email);
+	const onSubmit = (data: FormValues) => {
+		console.log(data);
 	};
 	return (
 		<form className={style.FormHomePsy}>
 			<Input
 				register={register}
-				error={errors.name}
+				error={errors.email}
 				type='email'
 				placeholder='Ваш e-mail'
 			/>
