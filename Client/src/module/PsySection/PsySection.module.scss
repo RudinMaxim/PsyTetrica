@@ -134,7 +134,7 @@
 				}
 			}
 		}
-		.text {
+		.textAllNeed {
 			width: 50%;
 			text-align: justify;
 		}
@@ -151,6 +151,7 @@
 	h2 {
 		text-align: center;
 		font-size: 2.5rem;
+		margin-bottom: 2rem;
 		span {
 			color: var(--fourthly-color);
 		}
@@ -165,20 +166,130 @@
 		.Grid {
 			padding: 1rem;
 			border-radius: var(--border-radius);
+			min-height: 300px;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+			position: relative;
+			h3 {
+				margin-bottom: 2rem;
+			}
+			p {
+				text-align: justify;
+				font-size: 1rem;
+			}
+
+			span {
+				padding: 0.5rem 1rem;
+				text-align: center;
+				border-radius: 50%;
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+			}
 		}
 
 		.Grid1 {
 			grid-area: 1 / 1 / 3 / 2;
 			background-color: var(--primary-color);
+
+			span {
+				background-color: var(--tertiary-color);
+			}
 		}
 		.Grid2 {
 			grid-area: 1 / 2 / 2 / 3;
+			background-color: var(--tertiary-color);
+
+			span {
+				background-color: var(--primary-color);
+			}
 		}
 		.Grid3 {
 			grid-area: 1 / 3 / 2 / 4;
+			background-color: var(--tertiary-color);
+
+			span {
+				background-color: var(--primary-color);
+			}
 		}
 		.Grid4 {
 			grid-area: 2 / 2 / 3 / 4;
+			background-color: var(--tertiary-color);
+
+			span {
+				background-color: var(--primary-color);
+			}
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	.Grids {
+		grid-template-columns: 1fr !important;
+		grid-template-rows: repeat(4, auto) !important;
+	}
+
+	.Grid1,
+	.Grid2,
+	.Grid3,
+	.Grid4 {
+		grid-area: auto !important;
+	}
+
+	.Grid2,
+	.Grid3 {
+		margin-top: 16px !important;
+	}
+
+	.Grid4 {
+		margin-top: 16px !important;
+	}
+}
+
+.PsyFAQ {
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.subTitleFAQ {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 1rem;
+		height: 1.5rem;
+		width: 1.5rem;
+
+		path {
+			fill: var(--primary-color);
+		}
+	}
+	li {
+		margin-bottom: 1rem;
+
+		padding: 1rem 2rem;
+		background-color: var(--tertiary-color);
+		box-shadow: var(--box-shadow);
+		border-radius: var(--border-radius);
+		color: var(--text-color);
+		cursor: pointer;
+		text-align: justify;
+
+		.title {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			color: var(--text-color);
+			font-weight: 600;
+			min-height: 50px;
+		}
+		.answer {
+			margin-top: 1rem;
 		}
 	}
 }

@@ -33,7 +33,7 @@ export default function PsyAllNeed(): React.JSX.Element {
 							</span>
 						</div>
 
-						{!isMobile && <p className={style.text}>{item.text}</p>}
+						{!isMobile && <p className={style.textAllNeed}>{item.text}</p>}
 					</li>
 				))}
 			</ul>

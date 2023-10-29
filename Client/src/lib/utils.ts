@@ -6,3 +6,8 @@ export function getFirstLetters(str: string) {
 
 	return firstLetters;
 }
+
+export const getCurrentYear = () => {
+	const date = new Date();
+	return date.getFullYear();
+};

@@ -65,3 +65,27 @@ export const PsyAllNeedCard = [
 		url: null,
 	},
 ];
+export interface IFAQ {
+	question: string;
+	answer: string;
+}
+export const FAQ: IFAQ[] = [
+	{
+		question:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?',
+		answer:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+	},
+	{
+		question:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?',
+		answer:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+	},
+	{
+		question:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore?',
+		answer:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+	},
+];
