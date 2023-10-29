@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import { FaBars } from 'react-icons/fa6';
 
 export default function Header(): React.JSX.Element {
-	const isMobile: boolean = useMediaQuery({ maxWidth: 954 });
+	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });
 	return (
 		<div className='continer'>
 			<header className={style.Header}>

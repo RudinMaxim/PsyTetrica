@@ -6,16 +6,18 @@ interface IButton {
 	disabled?: boolean;
 	tabIndex?: number;
 	background?: 'primary' | 'secondary' | 'tertiary' | 'fourthly';
+	shape?: 'circle' | 'square';
 	[key: string]: any;
 }
 
-export default function Button({
+export function Button({
 	children,
 	type = 'button',
 	value,
 	disabled = false,
 	tabIndex = 0,
 	background = 'primary',
+	shape = 'square',
 	...rest
 }: IButton) {
 	let backgroundClass = '';
@@ -35,9 +37,11 @@ export default function Button({
 		default:
 			backgroundClass = style.Primary;
 	}
+	const buttonSquar =
+		shape === 'circle' ? style.CircleButton : style.SquareButton;
 	return (
 		<button
-			className={`${style.Button} ${backgroundClass}`}
+			className={`${style.Button} ${backgroundClass} ${buttonSquar}`}
 			type={type}
 			value={value}
 			disabled={disabled}

@@ -1,9 +1,11 @@
 .Button {
-	border-radius: 9px;
-	padding: 0.5rem 1rem;
 	color: var(--bg-color);
 	font-weight: 700;
 	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
 }
 .Primary {
 	background: var(--primary-color);
@@ -16,4 +18,15 @@
 }
 .Fourthly {
 	background: var(--fourthly-color);
+}
+.CircleButton {
+	border-radius: 50%;
+	width: max-content;
+	height: max-content;
+	padding: 0.5rem;
+}
+
+.SquareButton {
+	border-radius: 9px;
+	padding: 1rem 2rem;
 }

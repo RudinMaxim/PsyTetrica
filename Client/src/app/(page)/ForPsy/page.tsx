@@ -1,9 +1,22 @@
+import {
+	PsyAllNeed,
+	PsyDifferences,
+	PsyFAQ,
+	PsyHomeSection,
+	PsyJoin,
+} from '@/module/exportModule';
 import React from 'react';
 
 export default function ForPsy() {
 	return (
 		<main>
-			<h1>Тут будет инф для психологов и регистрация</h1>
+			<div className='continer'>
+				<PsyHomeSection />
+				<PsyAllNeed />
+				<PsyDifferences />
+				<PsyJoin />
+				<PsyFAQ />
+			</div>
 		</main>
 	);
 }
