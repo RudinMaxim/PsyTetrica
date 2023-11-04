@@ -10,13 +10,11 @@ import React from 'react';
 export default function ForPsy() {
 	return (
 		<main>
-			<div className='continer'>
-				<PsyHomeSection />
-				<PsyAllNeed />
+			<PsyHomeSection />
+			{/* <PsyAllNeed />
 				<PsyDifferences />
 				<PsyJoin />
-				<PsyFAQ />
-			</div>
+				<PsyFAQ /> */}
 		</main>
 	);
 }

@@ -1,5 +1,9 @@
 .SocialLinks {
 	gap: 0.5rem;
 	display: flex;
+	padding: 1rem 8px;
 	align-items: center;
+	svg path {
+		filter: var(--bg-color);
+	}
 }

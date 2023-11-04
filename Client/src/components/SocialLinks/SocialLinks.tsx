@@ -1,24 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 import style from './SocialLinks.module.scss';
-import { FaYandex, FaTelegram, FaVk } from 'react-icons/fa6';
+import { tg, vk, YM } from '@/assets/image/image';
+import Image from 'next/image';
 
 export default function SocialLinks(): React.JSX.Element {
 	return (
 		<ul className={style.SocialLinks}>
 			<li>
 				<Link href={'#'}>
-					<FaYandex />
+					<Image src={tg} alt='TG' />
 				</Link>
 			</li>
 			<li>
 				<Link href={'#'}>
-					<FaTelegram />
-				</Link>
-			</li>
-			<li>
-				<Link href={'#'}>
-					<FaVk />
+					<Image src={vk} alt='VK' />
 				</Link>
 			</li>
 		</ul>

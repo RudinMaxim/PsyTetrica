@@ -1,9 +1,6 @@
-import HomeSection from './HomeSection/HomeSection';
-export { HomeSection };
-
-import PsyHomeSection from './PsySection/PsyHomeSection';
-import PsyAllNeed from './PsySection/PsyAllNeed';
-import PsyDifferences from './PsySection/PsyDifferences';
-import PsyFAQ from './PsySection/PsyFAQ';
-import PsyJoin from './PsySection/PsyJoin';
+import PsyHomeSection from './PsyPage/PsyHomeSection';
+import PsyAllNeed from './PsyPage/PsyAllNeed';
+import PsyDifferences from './PsyPage/PsyDifferences';
+import PsyFAQ from './PsyPage/PsyFAQ';
+import PsyJoin from './PsyPage/PsyJoin';
 export { PsyHomeSection, PsyAllNeed, PsyDifferences, PsyFAQ, PsyJoin };

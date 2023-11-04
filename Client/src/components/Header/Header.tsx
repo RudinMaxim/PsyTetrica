@@ -1,60 +1,57 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import style from './Header.module.scss';
-import { Logo } from '../exportComponents';
-import NavBar from './components/NavBat';
-import ButtonList from './components/ButtonList';
+import Image from 'next/image';
+import { burger } from '@/assets/image/image';
 
-import { useMediaQuery } from 'react-responsive';
-import { FaBars, FaMinus } from 'react-icons/fa6';
-import Link from 'next/link';
+import NavBar from './components/NavBat';
+import AuthButton from './components/AuthButton';
+import MobailMenu from './components/mobailMenu';
+import { Logo } from '../exportComponents';
+import { Button } from '@/UI/exportUI';
 
 export default function Header(): React.JSX.Element {
-	const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+	const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });
 
 	const handleMenuClick = (): void => {
-		setMenuOpen((el: boolean) => !el);
+		setMobileMenuOpen((el: boolean) => !el);
 	};
 
 	useEffect(() => {
-		if (isMobile === true) {
-			document.body.style.overflow = isMenuOpen ? 'hidden' : 'visible';
+		if (isMobile && isMobileMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
 		}
-		return () => {
-			document.body.style.overflow = 'visible';
-		};
-	}, [isMenuOpen, isMobile]);
+	}, [isMobileMenuOpen, isMobile]);
 
 	return (
 		<>
 			<div className='continer'>
 				<header className={style.Header}>
-					{!isMobile ? (
+					{!isMobile && (
 						<>
 							<Logo />
 							<NavBar onMenuToggle={handleMenuClick} />
-							<ButtonList />
+							<Button background='none' shape='square'>
+								Войти
+							</Button>
 						</>
-					) : (
+					)}
+					{isMobile && (
 						<>
 							<Logo />
-							<FaBars
-								onClick={handleMenuClick}
-								className={style.menuIconMobil}
-							/>
+							<Image src={burger} alt='burger' onClick={handleMenuClick} />
 						</>
 					)}
 				</header>
 			</div>
 
-			{isMobile && isMenuOpen && (
-				<div className={style.mobileMenu}>
-					<FaMinus className={style.closeIcon} onClick={handleMenuClick} />
-					<NavBar onMenuToggle={handleMenuClick} />
-					<ButtonList />
-				</div>
+			{isMobile && isMobileMenuOpen && (
+				<MobailMenu onMenuToggle={handleMenuClick} />
 			)}
 		</>
 	);

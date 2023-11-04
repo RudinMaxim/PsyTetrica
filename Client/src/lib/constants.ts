@@ -11,17 +11,17 @@ export { CLIENT_ROLE_ID, PSYCHOLOGIST_ROLE_ID, ADMIN_ROLE_ID, SUPPORT_ROLE_ID };
 
 export const NavLink = [
 	{
-		url: '/#about',
-		title: 'О нас',
+		url: '/',
+		title: 'Главная',
 	},
-	{
-		url: '/Materials',
-		title: 'Материалы',
-	},
-	{
-		url: '/TestPsy',
-		title: 'Тесты',
-	},
+	// {
+	// 	url: '/Materials',
+	// 	title: 'Расписание',
+	// },
+	// {
+	// 	url: '/TestPsy',
+	// 	title: 'Тесты',
+	// },
 	{
 		url: '/ForPsy',
 		title: 'Для психологов',
