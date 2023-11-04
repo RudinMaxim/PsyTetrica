@@ -1,0 +1,47 @@
+.PsyHome {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	min-height: 50dvh;
+	padding-top: 250px;
+
+	background-image: url('../../assets/image/photh/BgPsy.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	.PsyHomeInner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+		width: 100%;
+
+		.Info {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			h1 {
+				font-size: 2.5rem;
+				font-style: normal;
+				font-weight: 700;
+				margin-bottom: 2.5rem;
+				max-width: 70%;
+				color: var(--bg-color);
+			}
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	.PsyHomeInner {
+		h1 {
+			max-width: 100% !important;
+			font-size: 1.5rem !important;
+		}
+	}
+}

@@ -1,8 +1,14 @@
 .Header {
-	margin: 2rem 0;
+	position: absolute;
 	display: flex;
 	align-items: center;
+	align-self: center;
 	justify-content: space-between;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 2rem 8px;
 }
 
 .NavBar {
@@ -41,8 +47,8 @@
 	height: 100%;
 	z-index: 9999;
 	background-color: #68829f;
-	background-image: url('../../assets/image/photh/bgMenu1.svg'),
-		url('../../assets/image/photh/bgMeu1.svg');
+	background-image: url('../../assets/image/photh/bgBallLeft.svg'),
+		url('../../assets/image/photh/bgBallRight.svg');
 	background-position: top -50px left -50px, bottom right;
 	background-repeat: no-repeat, no-repeat;
 

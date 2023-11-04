@@ -8,9 +8,9 @@ export default function Footer() {
 	const start = '2023';
 	return (
 		<footer className={style.Footer}>
-			&copy; {year == start ? `${year}` : `${start} - ${year}`}, Все права
+			{/* &copy; {year == start ? `${year}` : `${start} - ${year}`}, Все права
 			защищены,
-			<Link href={'/'}> PsyTetrica</Link>
+			<Link href={'/'}> PsyTetrica</Link> */}
 		</footer>
 	);
 }

@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { burger } from '@/assets/image/image';
 
 import NavBar from './components/NavBat';
-import AuthButton from './components/AuthButton';
 import MobailMenu from './components/mobailMenu';
 import { Logo } from '../exportComponents';
 import { Button } from '@/UI/exportUI';

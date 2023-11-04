@@ -1,0 +1,40 @@
+.teg {
+	max-width: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	border-radius: var(--border-radius);
+	background-color: var(--fifth-color);
+	gap: 0.5rem;
+	.point {
+		position: relative;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+	}
+}
+.Primary {
+	color: var(--primary-color);
+	.point {
+		background: var(--primary-color);
+	}
+}
+.Secondary {
+	color: var(--secondary-color);
+	.point {
+		background: var(--secondary-color);
+	}
+}
+.Tertiary {
+	color: var(--tertiary-color);
+	.point {
+		background: var(--tertiary-color);
+	}
+}
+.Fourthly {
+	color: var(--fourthly-color);
+	.point {
+		background: var(--fourthly-color);
+	}
+}
