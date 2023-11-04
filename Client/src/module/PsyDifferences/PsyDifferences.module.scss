@@ -1,0 +1,50 @@
+.PsyDifferences {
+	background-color: var(--fourthly-color);
+	padding: 2.5rem 1.5rem;
+	border-radius: var(--border-radius);
+	h2 {
+		text-align: center;
+		color: var(--bg-color);
+		margin-bottom: 2rem;
+		margin-top: 0.5rem;
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.7rem;
+	}
+	li {
+		background-color: var(--fifth-color);
+		border-radius: var(--border-radius);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		min-height: 300px;
+		max-width: 250px;
+		h3 {
+			margin-bottom: 1rem;
+		}
+		p {
+			font-size: 1rem;
+			text-align: justify;
+		}
+	}
+	span {
+		color: var(--tertiary-color);
+	}
+}
+@media screen and (max-width: 769px) {
+	.PsyDifferences {
+		ul {
+			flex-direction: column;
+		}
+		li {
+			max-width: 100% !important;
+			height: 150px;
+		}
+	}
+}

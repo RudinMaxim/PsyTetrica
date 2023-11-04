@@ -1,6 +1,6 @@
 :root {
 	--max-width: 1280px;
-	--border-radius: 39px;
+	--border-radius: 15px;
 	--transition: all 0.3s ease-in-out;
 
 	--primary-color: #68829f;
@@ -41,7 +41,6 @@ body {
 	font-size: 20px;
 	font-weight: 400;
 	background: var(--bg-color);
-	// background-color: var(--text-color);
 	color: var(--text-color);
 }
 
