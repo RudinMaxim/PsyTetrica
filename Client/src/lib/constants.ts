@@ -14,14 +14,14 @@ interface INavLink {
 	title: string;
 }
 export const NavLink: INavLink[] = [
-	{
-		url: '/',
-		title: 'Главная',
-	},
-	{
-		url: '/ForPsy',
-		title: 'Для психологов',
-	},
+	// {
+	// 	url: '/',
+	// 	title: 'Главная',
+	// },
+	// {
+	// 	url: '/ForPsy',
+	// 	title: 'Для психологов',
+	// },
 ];
 
 interface IPsyNeedCard {
@@ -39,7 +39,7 @@ export const PsyNeedCard: IPsyNeedCard[] = [
 			'Наши супервизоры - члены',
 			'международых ассоциаций И ОППЛ',
 		],
-		url: '/ForPsy',
+		url: 'https://t.me/Psyrega_bot',
 	},
 	{
 		title: 'Клиенты',
@@ -49,7 +49,7 @@ export const PsyNeedCard: IPsyNeedCard[] = [
 			'работаете на своей территории',
 			'сами договариваетесь о сессиях',
 		],
-		url: 'http://localhost:3000/ForPsy',
+		url: 'https://t.me/Psyrega_bot',
 	},
 	{
 		title: 'Групповая терапия',
@@ -59,7 +59,7 @@ export const PsyNeedCard: IPsyNeedCard[] = [
 			'выдаем сертификат',
 			'помогаем накопить часы',
 		],
-		url: 'http://localhost:3000/ForPsy',
+		url: 'https://t.me/Psyrega_bot',
 	},
 	{
 		title: 'Интервизии',
@@ -69,7 +69,7 @@ export const PsyNeedCard: IPsyNeedCard[] = [
 			'выдаем сертификат',
 			'повышаем рейтинг анкеты на сайте',
 		],
-		url: 'http://localhost:3000/ForPsy',
+		url: 'https://t.me/Psyrega_bot',
 	},
 	{
 		title: 'Обучение',
@@ -79,7 +79,7 @@ export const PsyNeedCard: IPsyNeedCard[] = [
 			'вы выбираете спикеров',
 			'доступная цена',
 		],
-		url: 'http://localhost:3000/ForPsy',
+		url: 'https://t.me/Psyrega_bot',
 	},
 	{
 		title: 'Подкасты',

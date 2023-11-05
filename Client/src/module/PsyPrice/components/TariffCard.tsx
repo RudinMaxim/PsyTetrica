@@ -40,7 +40,7 @@ export default function TariffCard({
 
 			<div className={style.TariffFooter}>
 				<p>Рекомендуем, если подписка окупается за 2 - 3 сессии у вас.</p>
-				<Button shape='circle' background={color}>
+				<Button shape='circle' background={color} type='submit'>
 					<FaArrowRight />
 				</Button>
 			</div>

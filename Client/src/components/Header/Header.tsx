@@ -34,7 +34,7 @@ export default function Header(): React.JSX.Element {
 					<>
 						<Logo />
 						<NavBar onMenuToggle={handleMenuClick} />
-						<Button background='none' shape='square'>
+						<Button background='none' shape='square' type='submit'>
 							Войти
 						</Button>
 					</>

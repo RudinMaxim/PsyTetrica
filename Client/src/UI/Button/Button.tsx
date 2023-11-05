@@ -52,14 +52,16 @@ export function Button({
 	const buttonSquar =
 		shape === 'circle' ? style.CircleButton : style.SquareButton;
 	return (
-		<button
-			className={`${style.Button} ${backgroundClass} ${buttonSquar}`}
-			type={type}
-			value={value}
-			disabled={disabled}
-			tabIndex={tabIndex}
-			{...rest}>
-			{children}
-		</button>
+		<form action='https://t.me/Psyrega_bot' target='_blank'>
+			<button
+				className={`${style.Button} ${backgroundClass} ${buttonSquar}`}
+				type={type}
+				value={value}
+				disabled={disabled}
+				tabIndex={tabIndex}
+				{...rest}>
+				{children}
+			</button>
+		</form>
 	);
 }

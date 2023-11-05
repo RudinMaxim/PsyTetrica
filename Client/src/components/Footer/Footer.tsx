@@ -20,7 +20,7 @@ export default function Footer() {
 				<div className={style.Copyright}>
 					Copyright &copy; {year == start ? `${year}` : `${start} - ${year}`},
 					Все права защищены,
-					<Link href={'/'}> PsyTetrica</Link>
+					<Link href={'https://vk.com/psytetrica'}> PsyTetrica</Link>
 				</div>
 			</div>
 		</footer>

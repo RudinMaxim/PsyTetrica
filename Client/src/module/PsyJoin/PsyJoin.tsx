@@ -18,7 +18,7 @@ export default function PsyJoin() {
 							узнаваемым психологом и повысить свою экспертность на максимум.
 						</p>
 						<ConnectLink
-							to='/'
+							to='https://t.me/Psyrega_bot'
 							text='Зарегистрироваться'
 							background='primary'
 							arrowColor='primary'

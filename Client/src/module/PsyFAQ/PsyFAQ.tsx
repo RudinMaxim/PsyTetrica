@@ -22,12 +22,14 @@ export default function PsyFAQ() {
 			<section className={style.PsyFAQ}>
 				<h2>FAQ</h2>
 				<div className={style.text}>
-					<p className={style.subTitleFAQ}>
-						Мы собрали часто задаваемые в одном блоке чтобы вы могли найти для
-						себя ответы. Если ответа на ваш вопрос здесь нет, пишите напрямую
-						создателю сервиса <Link href={''}>@Stag159</Link> в личные сообщения
-						в Telegram
-					</p>
+					<div className={style.subTitleFAQ}>
+						<p>
+							Мы собрали часто задаваемые в одном блоке чтобы вы могли найти для
+							себя ответы. Если ответа на ваш вопрос здесь нет, пишите напрямую
+							создателю сервиса <Link href={''}>@Stag159</Link> в личные
+							сообщения в Telegram
+						</p>
+					</div>
 				</div>
 				<ul>
 					{FAQ.map((question: IFAQ, index: number) => (
