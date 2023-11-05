@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import style from './ConnectLink.module.scss';
-import { Button } from '@/UI/exportUI';
 import { FaArrowRight } from 'react-icons/fa6';
 interface ILink {
 	to: string;
@@ -31,62 +30,33 @@ export default function ConnectLink({
 	arrowColor = 'primary',
 	...rest
 }: ILink) {
-	let backgroundClass = '';
-	switch (background) {
-		case 'primary':
-			backgroundClass = style.Primary;
-			break;
-		case 'secondary':
-			backgroundClass = style.Secondary;
-			break;
-		case 'tertiary':
-			backgroundClass = style.Tertiary;
-			break;
-		case 'fourthly':
-			backgroundClass = style.Fourthly;
-			break;
-		case 'fifth':
-			backgroundClass = style.Fifth;
-			break;
-		case 'none':
-			backgroundClass = style.None;
-			break;
-		default:
-			backgroundClass = style.Primary;
-	}
-	let arrowClass = '';
-	switch (arrowColor) {
-		case 'primary':
-			arrowClass = style.arrowPrimary;
-			break;
-		case 'secondary':
-			arrowClass = style.arrowSecondary;
-			break;
-		case 'tertiary':
-			arrowClass = style.arrowTertiary;
-			break;
-		case 'fourthly':
-			arrowClass = style.arrowFourthly;
-			break;
-		case 'fifth':
-			arrowClass = style.arrowFifth;
-			break;
-		case 'none':
-			arrowClass = style.arrowNone;
-			break;
-		default:
-			arrowClass = style.arrowPrimary;
-	}
+	const backgroundClasses = {
+		primary: style.Primary,
+		secondary: style.Secondary,
+		tertiary: style.Tertiary,
+		fourthly: style.Fourthly,
+		fifth: style.Fifth,
+		none: style.None,
+	};
+	let backgroundClass = backgroundClasses[background] || style.Primary;
+
+	const arrowClasses = {
+		primary: style.arrowPrimary,
+		secondary: style.arrowSecondary,
+		tertiary: style.arrowTertiary,
+		fourthly: style.arrowFourthly,
+		fifth: style.arrowFifth,
+		none: style.arrowNone,
+	};
+	let arrowClass = arrowClasses[arrowColor] || style.Primary;
 
 	return (
 		<Link
 			href={to}
-			className={`${style.ConnectLink} ${backgroundClass}`}
+			className={`${style.ConnectLink} ${backgroundClass} ${arrowClass}`}
 			{...rest}>
 			<span>{text}</span>
-			<Button shape='circle' background={`${arrowClass}`}>
-				<FaArrowRight />
-			</Button>
+			<FaArrowRight />
 		</Link>
 	);
 }

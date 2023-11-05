@@ -1,18 +1,16 @@
 .ConnectLink {
-	font-size: 1.4rem;
-	font-weight: 700;
-	color: var(--bg-color);
+	font-size: 1.5rem;
+	font-weight: 600;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+	max-width: min-content;
 	gap: 0.5rem;
 	padding: 0.5rem 1rem;
-	max-width: 250px;
-	span {
-		margin-left: 0.5rem;
-	}
-	border: 1px solid var(--bg-color);
 	border-radius: var(--border-radius);
+	background-color: var(--bg-color);
+	color: var(--bg-color);
+	border: 2px solid var(--bg-color);
 }
 .Primary {
 	background: var(--primary-color);

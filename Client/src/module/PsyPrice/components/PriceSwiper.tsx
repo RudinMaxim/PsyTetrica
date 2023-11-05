@@ -15,7 +15,8 @@ export default function PriceSwiper() {
 		<Swiper
 			slidesPerView={isMobile ? 1 : 4}
 			spaceBetween={15}
-			initialSlide={1}
+			initialSlide={2}
+			centeredSlides={true}
 			freeMode={true}
 			pagination={{
 				clickable: true,

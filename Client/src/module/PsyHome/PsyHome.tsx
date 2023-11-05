@@ -14,7 +14,7 @@ export default function PsyHome(): React.JSX.Element {
 						<ConnectLink
 							to='/'
 							text='Присоединиться'
-							arrowColor='none'
+							arrowColor='primary'
 							background='none'
 						/>
 					</div>

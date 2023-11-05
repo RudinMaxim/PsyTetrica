@@ -21,7 +21,7 @@ export default function PsyJoin() {
 							to='/'
 							text='Зарегистрироваться'
 							background='primary'
-							arrowColor='none'
+							arrowColor='primary'
 						/>
 					</div>
 					<div className={style.colum}>
