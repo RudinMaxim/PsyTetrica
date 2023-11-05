@@ -1,4 +1,23 @@
 .Footer {
-	text-align: center;
-	opacity: 0.8;
+	background-color: var(--primary-color);
+	.FooterHead {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2rem 0;
+		border-bottom: 1px solid var(--bg-color);
+	}
+	.Copyright {
+		padding: 2rem 0;
+		text-align: center;
+		color: var(--bg-color);
+		a {
+			color: var(--bg-color);
+		}
+	}
+}
+@media screen and (max-width: 769px) {
+	.FooterHead {
+		flex-direction: column;
+	}
 }

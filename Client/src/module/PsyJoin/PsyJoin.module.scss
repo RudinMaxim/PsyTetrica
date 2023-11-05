@@ -1,0 +1,79 @@
+.PsyJoin {
+	margin: 2rem 0;
+	.PsyJoinInner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	h2 {
+		color: var(--tertiary-color);
+		font-size: 3rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.text,
+	p {
+		text-align: justify;
+	}
+	article {
+		&:first-child {
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+		}
+	}
+
+	.colum {
+		max-width: 48%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+
+		h3 {
+			margin: 2rem 0rem;
+		}
+		b {
+			font-size: 2.4rem;
+			padding: 1rem 2rem;
+
+			border-radius: 50%;
+			border: 2px solid var(--text-color);
+		}
+	}
+	.bgPsy2 {
+		max-width: 100%;
+		margin-top: 1rem;
+		margin-bottom: 5rem;
+	}
+	.ListCheckMark {
+		li {
+			gap: 0.5rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 3rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.under {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+	.PsyJoinInner,
+	.under {
+		flex-direction: column;
+		.colum {
+			max-width: 100%;
+		}
+		h2 {
+			font-size: 1.5rem;
+		}
+	}
+}

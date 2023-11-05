@@ -5,7 +5,13 @@ interface IButton {
 	value?: string | string[];
 	disabled?: boolean;
 	tabIndex?: number;
-	background?: 'primary' | 'secondary' | 'tertiary' | 'fourthly' | 'none';
+	background?:
+		| 'primary'
+		| 'secondary'
+		| 'tertiary'
+		| 'fourthly'
+		| 'fifth'
+		| 'none';
 	shape?: 'circle' | 'square';
 	[key: string]: any;
 }
@@ -33,6 +39,9 @@ export function Button({
 			break;
 		case 'fourthly':
 			backgroundClass = style.Fourthly;
+			break;
+		case 'fifth':
+			backgroundClass = style.Fifth;
 			break;
 		case 'none':
 			backgroundClass = style.None;

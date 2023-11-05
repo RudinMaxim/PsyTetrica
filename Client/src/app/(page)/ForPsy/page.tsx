@@ -3,6 +3,7 @@ import {
 	PsyNeed,
 	PsyDifferences,
 	PsyJoin,
+	PsyPrice,
 	PsyFAQ,
 	PsyForm,
 } from '@/module/exportModule';
@@ -15,6 +16,7 @@ export default function ForPsy() {
 			<PsyNeed />
 			<PsyDifferences />
 			<PsyJoin />
+			<PsyPrice />
 			<PsyFAQ />
 			<PsyForm />
 		</main>

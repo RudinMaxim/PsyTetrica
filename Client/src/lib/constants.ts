@@ -160,3 +160,101 @@ export const FAQ: IFAQ[] = [
 			'Ваши документы проверяют наши сотрудник - опытные психологи которые работают с нами. Эти же люди принамают решение о вашем вступлении, колиство часов при вступлении в сообшество не имеет значения, это проверят на моменте публикации анкеты',
 	},
 ];
+
+export interface ITariff {
+	price: number;
+	name: string;
+	options: IOption[];
+	color?: 'primary' | 'secondary' | 'tertiary' | 'fourthly' | 'fifth';
+}
+interface IOption {
+	name: string;
+	active: boolean;
+}
+
+export const Tariff: ITariff[] = [
+	{
+		price: 3990,
+		name: 'Базовый',
+		color: 'primary',
+		options: [
+			{ name: 'супервизии', active: true },
+			{ name: 'интервизии', active: true },
+			{ name: 'Групповая терапия', active: true },
+			{ name: 'база знаний', active: true },
+			{ name: 'возможность записать подкаст', active: true },
+			{ name: 'ваша анкета на сайте', active: true },
+			{ name: 'ваши статьи на сайте psytetrica', active: true },
+			{ name: 'Доступ в чат сообщества', active: true },
+			{ name: 'ваша анкета на главной странице сайта', active: false },
+			{ name: 'Ваша анкета выдается в приоритете клиентам', active: false },
+			{
+				name: 'бесплатное обучение с международной аккредитацией',
+				active: false,
+			},
+		],
+	},
+	{
+		price: 4990,
+		name: 'Стандартный',
+		color: 'fourthly',
+		options: [
+			{ name: 'супервизии', active: true },
+			{ name: 'интервизии', active: true },
+			{ name: 'Групповая терапия', active: true },
+			{ name: 'база знаний', active: true },
+			{ name: 'возможность записать подкаст', active: true },
+			{ name: 'ваша анкета на сайте', active: true },
+			{ name: 'ваши статьи на сайте psytetrica', active: true },
+			{ name: 'Доступ в чат сообщества', active: true },
+			{ name: 'ваша анкета на главной странице сайта', active: true },
+			{ name: 'Ваша анкета выдается в приоритете клиентам', active: false },
+			{
+				name: 'бесплатное обучение с международной аккредитацией',
+				active: false,
+			},
+		],
+	},
+	{
+		price: 5990,
+		name: 'Расширенный',
+		color: 'tertiary',
+		options: [
+			{ name: 'супервизии', active: true },
+			{ name: 'интервизии', active: true },
+			{ name: 'Групповая терапия', active: true },
+			{ name: 'база знаний', active: true },
+			{ name: 'возможность записать подкаст', active: true },
+			{ name: 'ваша анкета на сайте', active: true },
+			{ name: 'ваши статьи на сайте psytetrica', active: true },
+			{ name: 'Доступ в чат сообщества', active: true },
+			{ name: 'ваша анкета на главной странице сайта', active: true },
+			{ name: 'Ваша анкета выдается в приоритете клиентам', active: true },
+			{
+				name: 'бесплатное обучение с международной аккредитацией',
+				active: false,
+			},
+		],
+	},
+	{
+		price: 9990,
+		name: 'Максимальный',
+		color: 'fifth',
+		options: [
+			{ name: 'супервизии', active: true },
+			{ name: 'интервизии', active: true },
+			{ name: 'Групповая терапия', active: true },
+			{ name: 'база знаний', active: true },
+			{ name: 'возможность записать подкаст', active: true },
+			{ name: 'ваша анкета на сайте', active: true },
+			{ name: 'ваши статьи на сайте psytetrica', active: true },
+			{ name: 'Доступ в чат сообщества', active: true },
+			{ name: 'ваша анкета на главной странице сайта', active: true },
+			{ name: 'Ваша анкета выдается в приоритете клиентам', active: true },
+			{
+				name: 'бесплатное обучение с международной аккредитацией',
+				active: true,
+			},
+		],
+	},
+];

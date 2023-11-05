@@ -8,5 +8,21 @@ import YM from './photh/YndMus.svg';
 import YM2 from './photh/YndMus2.svg';
 import bgmenu1 from './photh/bgBallLeft.svg';
 import bgmenu2 from './photh/bgBallRight.svg';
-
-export { BgPsy, tg, tg2, vk, vk2, YM, YM2, burger, bgmenu1, bgmenu2 };
+import bgPsy2 from './photh/bgPsy2.png';
+import checkmark from './photh/checkmark.svg';
+import uncheckmark from './photh/uncheckmark.svg';
+export {
+	BgPsy,
+	bgPsy2,
+	tg,
+	tg2,
+	vk,
+	vk2,
+	YM,
+	YM2,
+	burger,
+	bgmenu1,
+	bgmenu2,
+	checkmark,
+	uncheckmark,
+};

@@ -75,3 +75,6 @@ body {
 ::-webkit-scrollbar-thumb {
 	background: var(--primary-color);
 }
+::selection {
+	background-color: var(--tertiary-color);
+}

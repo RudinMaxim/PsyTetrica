@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import style from './Teg.module.scss';
 
 interface ITeg {
-	color?: 'primary' | 'secondary' | 'tertiary' | 'fourthly';
+	color?: 'primary' | 'secondary' | 'tertiary' | 'fourthly' | 'fifth';
 	text?: string;
 	[key: string]: any;
 }
@@ -21,6 +21,9 @@ export function Teg({ color = 'primary', text, ...rest }: ITeg) {
 			break;
 		case 'fourthly':
 			backgroundClass = style.Fourthly;
+			break;
+		case 'fifth':
+			backgroundClass = style.Fifth;
 			break;
 		default:
 			backgroundClass = style.Primary;

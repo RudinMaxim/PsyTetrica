@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { NavLink } from '@/lib/constants';
 import Link from 'next/link';
 interface INavBar {
-	onMenuToggle: () => void;
+	onMenuToggle?: () => void;
 }
 export default function NavBar({ onMenuToggle }: INavBar) {
 	const currentRoute = usePathname();
