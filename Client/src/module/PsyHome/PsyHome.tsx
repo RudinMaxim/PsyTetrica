@@ -11,7 +11,12 @@ export default function PsyHome(): React.JSX.Element {
 						<h1>
 							Cтаньте частью профессионального сообщества психологов PsyTetrica
 						</h1>
-						<ConnectLink to='/' text='Присоединиться' />
+						<ConnectLink
+							to='/'
+							text='Присоединиться'
+							arrowColor='none'
+							background='none'
+						/>
 					</div>
 				</div>
 			</div>

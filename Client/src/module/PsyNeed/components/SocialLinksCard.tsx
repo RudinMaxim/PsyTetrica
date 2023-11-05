@@ -3,7 +3,7 @@ import style from '../PsyNeed.module.scss';
 import Image from 'next/image';
 import { tg2, vk2, YM2 } from '@/assets/image/image';
 
-export default function SocialLinksCard() {
+export default function SocialLinksCard(): React.JSX.Element {
 	return (
 		<ul className={style.SocialLinksCard}>
 			<li>
@@ -21,7 +21,7 @@ export default function SocialLinksCard() {
 			<li>
 				<Image src={YM2} alt='YM' />
 				<p>
-					Подкасты с нашими психолгами есть в <span>Яндекс Музыке</span>
+					Наши подкасты в <span>Яндекс Музыке</span>
 				</p>
 			</li>
 		</ul>

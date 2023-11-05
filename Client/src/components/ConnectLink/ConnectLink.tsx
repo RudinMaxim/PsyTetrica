@@ -6,14 +6,15 @@ import { FaArrowRight } from 'react-icons/fa6';
 interface ILink {
 	to: string;
 	text?: string;
-	background?:
+	background:
 		| 'primary'
 		| 'secondary'
 		| 'tertiary'
 		| 'fourthly'
 		| 'fifth'
 		| 'none';
-	arrowColor?:
+
+	arrowColor:
 		| 'primary'
 		| 'secondary'
 		| 'tertiary'
@@ -27,6 +28,7 @@ export default function ConnectLink({
 	to,
 	text,
 	background = 'primary',
+	arrowColor = 'primary',
 	...rest
 }: ILink) {
 	let backgroundClass = '';
@@ -52,14 +54,39 @@ export default function ConnectLink({
 		default:
 			backgroundClass = style.Primary;
 	}
+	let arrowClass = '';
+	switch (arrowColor) {
+		case 'primary':
+			arrowClass = style.arrowPrimary;
+			break;
+		case 'secondary':
+			arrowClass = style.arrowSecondary;
+			break;
+		case 'tertiary':
+			arrowClass = style.arrowTertiary;
+			break;
+		case 'fourthly':
+			arrowClass = style.arrowFourthly;
+			break;
+		case 'fifth':
+			arrowClass = style.arrowFifth;
+			break;
+		case 'none':
+			arrowClass = style.arrowNone;
+			break;
+		default:
+			arrowClass = style.arrowPrimary;
+	}
+
 	return (
-		<span className={`${style.ConnectLink} ${backgroundClass}`} {...rest}>
-			<Link href={to}>
-				<span>{text}</span>
-				<Button shape='circle' background='secondary'>
-					<FaArrowRight />
-				</Button>
-			</Link>
-		</span>
+		<Link
+			href={to}
+			className={`${style.ConnectLink} ${backgroundClass}`}
+			{...rest}>
+			<span>{text}</span>
+			<Button shape='circle' background={`${arrowClass}`}>
+				<FaArrowRight />
+			</Button>
+		</Link>
 	);
 }

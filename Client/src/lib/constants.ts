@@ -176,7 +176,7 @@ export const Tariff: ITariff[] = [
 	{
 		price: 3990,
 		name: 'Базовый',
-		color: 'primary',
+		color: 'fifth',
 		options: [
 			{ name: 'супервизии', active: true },
 			{ name: 'интервизии', active: true },
@@ -197,7 +197,7 @@ export const Tariff: ITariff[] = [
 	{
 		price: 4990,
 		name: 'Стандартный',
-		color: 'fourthly',
+		color: 'tertiary',
 		options: [
 			{ name: 'супервизии', active: true },
 			{ name: 'интервизии', active: true },
@@ -218,7 +218,7 @@ export const Tariff: ITariff[] = [
 	{
 		price: 5990,
 		name: 'Расширенный',
-		color: 'tertiary',
+		color: 'secondary',
 		options: [
 			{ name: 'супервизии', active: true },
 			{ name: 'интервизии', active: true },
@@ -239,7 +239,7 @@ export const Tariff: ITariff[] = [
 	{
 		price: 9990,
 		name: 'Максимальный',
-		color: 'fifth',
+		color: 'primary',
 		options: [
 			{ name: 'супервизии', active: true },
 			{ name: 'интервизии', active: true },

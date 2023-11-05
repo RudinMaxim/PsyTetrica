@@ -7,7 +7,7 @@ export default function PsyPrice() {
 		<div className='continer'>
 			<section className={`${style.PsyPrice}`}>
 				<div className={style.Head}>
-					<Teg color='primary' text='гибкая подписка' />
+					<Teg color='tertiary' text='гибкая подписка' />
 					<h2 className={style.Title}>Прайс на подписку</h2>
 					<p className={style.subTitle}>
 						Развивайтесь, получайте сертификаты и повышайте квалификацию по

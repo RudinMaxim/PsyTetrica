@@ -1,26 +1,30 @@
 import React from 'react';
 import style from './PsyJoin.module.scss';
 import { Teg } from '@/UI/exportUI';
-import { bgPsy2 } from '@/assets/image/image';
 import { ConnectLink } from '@/components/exportComponents';
-import Image from 'next/image';
 import { checkmark } from '@/assets/image/image';
+import Image from 'next/image';
 export default function PsyJoin() {
 	return (
 		<div className='continer'>
 			<section className={style.PsyJoin}>
 				<div className={style.PsyJoinInner}>
 					<div className={`${style.colum} ${style.colum1}`}>
-						<Teg text='полезно' color='tertiary' />
+						<Teg text='полезно' color='primary' />
 						<h2>Как присоединиться к сообществу?</h2>
 						<p className={style.text}>
 							Всего два шага отделяют вас от того чтобы стать частью сервиса
 							PsyTetrica, присоединить к 100+ психологам, найти клиентов, стать
 							узнаваемым психологом и повысить свою экспертность на максимум.
 						</p>
-						<ConnectLink to='/' text='Зарегистрироваться' />
+						<ConnectLink
+							to='/'
+							text='Зарегистрироваться'
+							background='primary'
+							arrowColor='none'
+						/>
 					</div>
-					<div className={`${style.colum} `}>
+					<div className={style.colum}>
 						<article>
 							<b>1</b>
 							<h3>Зарегистрируйтесь на сайте</h3>
@@ -40,7 +44,7 @@ export default function PsyJoin() {
 					</div>
 				</div>
 
-				<Image src={bgPsy2} alt='bgPsy2' className={style.bgPsy2} />
+				<div className={style.bgPsy2}></div>
 
 				<div className={style.under}>
 					<div className={style.colum}>

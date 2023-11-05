@@ -5,7 +5,6 @@ import { Button, Teg } from '@/UI/exportUI';
 import { FaArrowRight } from 'react-icons/fa6';
 import { checkmark, uncheckmark } from '@/assets/image/image';
 import Image from 'next/image';
-import { ConnectLink } from '@/components/exportComponents';
 
 export default function TariffCard({
 	name,
@@ -40,11 +39,10 @@ export default function TariffCard({
 			</ul>
 
 			<div className={style.TariffFooter}>
-				<p>рекомендуем, если подписка окупается за 2 - 3 сессии у вас.</p>
-				{/* <Button shape='circle' background={color}>
+				<p>Рекомендуем, если подписка окупается за 2 - 3 сессии у вас.</p>
+				<Button shape='circle' background={color}>
 					<FaArrowRight />
-				</Button> */}
-				<ConnectLink to='/' text='Присоединиться' />
+				</Button>
 			</div>
 		</div>
 	);

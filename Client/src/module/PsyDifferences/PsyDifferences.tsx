@@ -6,7 +6,7 @@ export default function PsyDifferences(): React.JSX.Element {
 	return (
 		<div className='continer'>
 			<section className={style.PsyDifferences}>
-				<Teg color='fourthly' text='наши плюсы' />
+				<Teg color='secondary' text='наши плюсы' />
 				<h2>Чем мы отличаемся от других?</h2>
 				<ul>
 					<li>
@@ -34,7 +34,7 @@ export default function PsyDifferences(): React.JSX.Element {
 							Постоянно развиваем наш сервис, добавляем новые услуги и
 							<span> слушаем </span>
 							ваши идеи. Вы можете связаться с создателем PsyTetrica в Telegram
-							и предложить <span> свои </span> идеи <span> @Stag159 </span>
+							и предложить <span> свои </span> идеи <span> @Stag159.</span>
 						</p>
 					</li>
 					<li>
@@ -43,7 +43,7 @@ export default function PsyDifferences(): React.JSX.Element {
 							Вместо того чтобы ставить баснословные требования для вступление в
 							сообщество, мы помогаем <span> развиваться </span> и набирать часы
 							и опыт тем, у кого их не хватает. Наша <span> цель </span> -
-							помочь вам развить частную практику в сильном сообществе
+							помочь вам развить частную практику в сильном сообществе.
 						</p>
 					</li>
 				</ul>

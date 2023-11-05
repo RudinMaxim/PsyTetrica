@@ -1,22 +1,37 @@
-.ConnectLink a {
+.ConnectLink {
 	font-size: 1.4rem;
-	font-style: normal;
 	font-weight: 700;
 	color: var(--bg-color);
-	border-radius: var(--border-radius);
-	border: 1px solid var(--bg-color);
-
-	padding: 0.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0.5rem;
-	background-image: none;
-	background: transparent;
-	float: left;
-
-	background: rgba(255, 255, 255, 0.4);
+	padding: 0.5rem 1rem;
+	max-width: 250px;
 	span {
 		margin-left: 0.5rem;
 	}
+	border: 1px solid var(--bg-color);
+	border-radius: var(--border-radius);
+}
+.Primary {
+	background: var(--primary-color);
+}
+.Secondary {
+	background: var(--secondary-color);
+}
+.Tertiary {
+	background: var(--tertiary-color);
+}
+.Fourthly {
+	background: var(--fourthly-color);
+}
+.Fifth {
+	background: var(--fifth-color);
+}
+.None {
+	background: rgba(255, 255, 255, 0.4);
+	background-image: none;
+	background: transparent;
+	float: left;
 }

@@ -12,7 +12,7 @@ export default function PsyNeedGrid() {
 	return (
 		<div className={style.PsyNeedGrid}>
 			<div className={style.Title}>
-				<Teg text='Наши услуги' color='tertiary' />
+				<Teg text='Наши услуги' color='primary' />
 				<h2>Все что нужно психологу в одной подписке</h2>
 			</div>
 			{PsyNeedCard.map((item, index) => (

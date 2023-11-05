@@ -29,25 +29,23 @@ export default function Header(): React.JSX.Element {
 
 	return (
 		<>
-			<div className='continer'>
-				<header className={style.Header}>
-					{!isMobile && (
-						<>
-							<Logo />
-							<NavBar onMenuToggle={handleMenuClick} />
-							<Button background='none' shape='square'>
-								Войти
-							</Button>
-						</>
-					)}
-					{isMobile && (
-						<>
-							<Logo />
-							<Image src={burger} alt='burger' onClick={handleMenuClick} />
-						</>
-					)}
-				</header>
-			</div>
+			<header className={style.Header}>
+				{!isMobile && (
+					<>
+						<Logo />
+						<NavBar onMenuToggle={handleMenuClick} />
+						<Button background='none' shape='square'>
+							Войти
+						</Button>
+					</>
+				)}
+				{isMobile && (
+					<>
+						<Logo />
+						<Image src={burger} alt='burger' onClick={handleMenuClick} />
+					</>
+				)}
+			</header>
 
 			{isMobile && isMobileMenuOpen && (
 				<MobailMenu onMenuToggle={handleMenuClick} />

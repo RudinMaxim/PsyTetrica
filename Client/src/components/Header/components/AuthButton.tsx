@@ -15,7 +15,13 @@ export default function AuthButton(): React.JSX.Element {
 					{session.user.username}
 				</Button>
 			) : (
-				<ConnectLink to='/' text='Войти' onClick={() => signIn()} />
+				<ConnectLink
+					to='/'
+					text='Войти'
+					background='none'
+					arrowColor='fifth'
+					onClick={() => signIn()}
+				/>
 			)}
 		</div>
 	);

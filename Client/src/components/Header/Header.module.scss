@@ -2,12 +2,13 @@
 	position: absolute;
 	display: flex;
 	align-items: center;
-	align-self: center;
 	justify-content: space-between;
 	z-index: 100;
 	top: 0;
-	left: 0;
-	right: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: var(--max-width);
+	width: 100%;
 	padding: 2rem 8px;
 }
 
